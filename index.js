@@ -17,9 +17,12 @@ module.exports = {
     if (this.$parent.$parent.$parent.$get('model') && this.$parent.$parent.$parent.$get('model').story) {
       var _locale = this.$parent.$parent.$parent.$get('model').story.full_slug.slice(0, 2);
     }
-    debugger;
     if (['de', 'en'].indexOf(_locale) < 0) {
       _locale = 'de';
+    }
+    if (!this.schema.options) {
+      console.error('localized-story-loader-flat: Define the following options: 0 : token, 1 : starts_with');
+      return false;
     }
     jQuery.ajax({
       url: 'https://api.storyblok.com/v1/cdn/stories/?token=' + this.schema.options[0].value + '&starts_with=' + _locale + '/' + this.schema.options[1].value + '/&is_startpage=false&time=' + Date.now(),
