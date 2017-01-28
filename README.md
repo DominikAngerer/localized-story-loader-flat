@@ -14,3 +14,18 @@ If you're using a folder structure like:
 ----- Second Location
 ```
 you can now directly use this plugin to access all (for example) *locations* in a dropdown. If you're looking for a *not localized* version (so we wouldn't look for `de` or `en` as root folders - look for the `story-loader-flat`.
+
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production
+npm run build
+```
+
+For more information see the [docs for field types](https://www.storyblok.com/docs/Guides/Creating-a-field-type-plugin).
