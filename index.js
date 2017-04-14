@@ -15,7 +15,9 @@ module.exports = {
 
     var _locale = 'de';
     if (this.$parent.$parent.$parent.$get('model') && this.$parent.$parent.$parent.$get('model').story) {
-      _locale = this.$parent.$parent.$parent.$get('model').story.full_slug.slice(0, 2);
+      if(this.$parent.$parent.$parent.$get('model').story.full_slug) {
+         _locale = this.$parent.$parent.$parent.$get('model').story.full_slug.slice(0, 2);
+      }
     }
     if (['de', 'en'].indexOf(_locale) < 0) {
       _locale = 'de';
