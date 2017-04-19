@@ -26,9 +26,9 @@ module.exports = {
       console.error('localized-story-loader-flat: Define the following options: 0 : token, 1 : starts_with, 2 : en_starts_with');
       return false;
     }
-    var url = 'https://api.storyblok.com/v1/cdn/stories/?token=' + this.schema.options[0].value + '&starts_with=' + _locale + '/' + this.schema.options[1].value + '/&per_page=250&is_startpage=false&time=' + Date.now();
+    var url = 'https://api.storyblok.com/v1/cdn/stories/?token=' + this.schema.options[0].value + '&starts_with=' + _locale + '/' + this.schema.options[1].value + '/&per_page=250&is_startpage=false&sort_by=name&time=' + Date.now();
     if(this.schema.options[2] && _locale == 'en') {
-      url = 'https://api.storyblok.com/v1/cdn/stories/?token=' + this.schema.options[0].value + '&starts_with=' + _locale + '/' + this.schema.options[2].value + '/&per_page=250&is_startpage=false&time=' + Date.now();
+      url = 'https://api.storyblok.com/v1/cdn/stories/?token=' + this.schema.options[0].value + '&starts_with=' + _locale + '/' + this.schema.options[2].value + '/&per_page=250&is_startpage=false&sort_by=name&time=' + Date.now();
     }
     jQuery.ajax({
       url: url,
